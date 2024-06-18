@@ -1,21 +1,26 @@
 class Account {
-  readonly id: number;
-  owner: string;
-  private balance: number;
+  //   readonly id: number;
+  //   owner: string;
+  //   private balance: number;
   nickname?: string;
-  constructor(id: number, owner: string, balance: number) {
-    this.id = id;
-    this.owner = owner;
-    this.balance = balance;
+
+  constructor(
+    public readonly id: number, // Here e replace the initialization of pramaters and the declaration types fro lines 2-4 and 12-14
+    public owner: string,
+    private _balance: number
+  ) {
+    // this.id = id;
+    // this.owner = owner;
+    // this.balance = balance;
   }
 
   deposit(amount: number): void {
     if (amount <= 0) throw new Error("Invalid amount");
-    this.balance += amount;
+    this._balance += amount;
   }
 
   getBalace() {
-    return this.balance;
+    return this._balance;
   }
 }
 
