@@ -125,5 +125,40 @@ class Circle extends Shape {
   constructor(public radius: number, color: string) {
     super(color);
   }
-  abstract render(): void;
+  override render(): void {}
+}
+
+class Persons {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName() {
+    return this.firstName + this.lastName;
+  }
+}
+
+class Employees extends Persons {
+  constructor(public salary: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+}
+
+let people = {
+  name: "Serafim",
+  salary: 50_000,
+  addres: {
+    stree: "Rose",
+    city: "Chsisnau",
+    zipCode: 2020,
+  },
+};
+
+interface Address {
+  stree: string;
+  city: string;
+  zipCode: number;
+}
+interface Person {
+  name: string;
+  salary: number;
+  address: Address;
 }
