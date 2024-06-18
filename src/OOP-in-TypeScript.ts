@@ -31,6 +31,16 @@ class Account {
 
 let account = new Account(1, "Serafim", 0);
 account.deposit(200);
-
 console.log(account.balace);
-account.balace = 10;
+account.balance = 10;
+
+class Seatassignment {
+  //A1, A2. ...
+  //Mosh, Serafim, ...
+  //Index signature property
+  [seatNumber: string]: string;
+}
+
+let seats = new Seatassignment();
+seats.A1 = "Mosh";
+seats.A2 = "Serafim";
