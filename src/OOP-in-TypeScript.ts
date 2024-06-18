@@ -90,3 +90,12 @@ class Student extends Person {
 
 let student1 = new Student(1, "Serafim", "Galinschii");
 console.log(student1.fullName, student1.id);
+
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor " + super.fullName; //super.fullName = this.firstName + " " + this.lastName;
+  }
+}
+
+let teacher1 = new Teacher("Serafim", "Galinschii");
+console.log(teacher1.fullName);
