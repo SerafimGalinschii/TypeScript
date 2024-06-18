@@ -114,3 +114,16 @@ getNames([
 function getNames(people: Person[]) {
   for (let person of people) console.log(person.fullName);
 }
+
+abstract class Shape {
+  constructor(public color: string) {}
+
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+  abstract render(): void;
+}

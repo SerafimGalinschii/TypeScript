@@ -93,4 +93,21 @@ function getNames(people) {
     for (let person of people)
         console.log(person.fullName);
 }
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+    render() { }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log("Circle radius:" + this.radius + " Color: " + this.color);
+    }
+}
+let shape = new Shape("red");
+console.log(shape);
 //# sourceMappingURL=OOP-in-TypeScript.js.map
