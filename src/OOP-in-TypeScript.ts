@@ -66,3 +66,27 @@ let ride2 = new Ride();
 ride2.start();
 
 console.log(Ride.activeRides);
+
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  walk() {
+    console.log("Walking");
+  }
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+class Student extends Person {
+  constructor(public id: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+    console.log("Takin a test");
+  }
+}
+
+let student1 = new Student(1, "Serafim", "Galinschii");
+console.log(student1.fullName, student1.id);

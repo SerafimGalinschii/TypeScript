@@ -49,4 +49,27 @@ ride1.start();
 let ride2 = new Ride();
 ride2.start();
 console.log(Ride.activeRides);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    walk() {
+        console.log("Walking");
+    }
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+class Student extends Person {
+    constructor(id, firstName, lastName) {
+        super(firstName, lastName);
+        this.id = id;
+    }
+    takeTest() {
+        console.log("Takin a test");
+    }
+}
+let student1 = new Student(1, "Serafim", "Galinschii");
+console.log(student1.fullName, student1.id);
 //# sourceMappingURL=OOP-in-TypeScript.js.map
