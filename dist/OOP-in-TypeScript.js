@@ -79,4 +79,18 @@ class Teacher extends Person {
 }
 let teacher1 = new Teacher("Serafim", "Galinschii");
 console.log(teacher1.fullName);
+class Principal extends Person {
+    get fullName() {
+        return "Principal " + super.fullName;
+    }
+}
+getNames([
+    new Student(1, "Serafim", "Galinschii"),
+    new Teacher("Alexa", "Smith"),
+    new Principal("Anelise", "Keating"),
+]);
+function getNames(people) {
+    for (let person of people)
+        console.log(person.fullName);
+}
 //# sourceMappingURL=OOP-in-TypeScript.js.map
