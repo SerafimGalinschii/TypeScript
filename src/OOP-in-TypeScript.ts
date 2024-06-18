@@ -19,11 +19,18 @@ class Account {
     this._balance += amount;
   }
 
-  getBalace() {
+  get balace() {
     return this._balance;
+  }
+
+  set balance(value: number) {
+    if (value < 0) throw new Error("Invalid Value");
+    this._balance = value;
   }
 }
 
 let account = new Account(1, "Serafim", 0);
 account.deposit(200);
-console.log(account.getBalace());
+
+console.log(account.balace);
+account.balace = 10;
