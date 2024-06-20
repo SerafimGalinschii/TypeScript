@@ -97,17 +97,36 @@ class Shape {
     constructor(color) {
         this.color = color;
     }
-    render() { }
 }
 class Circle extends Shape {
     constructor(radius, color) {
         super(color);
         this.radius = radius;
     }
-    render() {
-        console.log("Circle radius:" + this.radius + " Color: " + this.color);
+    render() { }
+}
+class Persons {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return this.firstName + this.lastName;
     }
 }
-let shape = new Shape("red");
-console.log(shape);
+class Employees extends Persons {
+    constructor(salary, firstName, lastName) {
+        super(firstName, lastName);
+        this.salary = salary;
+    }
+}
+let people = {
+    name: "Serafim",
+    salary: 50000,
+    addres: {
+        stree: "Rose",
+        city: "Chsisnau",
+        zipCode: 2020,
+    },
+};
 //# sourceMappingURL=OOP-in-TypeScript.js.map
