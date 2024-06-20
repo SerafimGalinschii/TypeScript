@@ -29,8 +29,20 @@ interface User {
 }
 
 interface Product {
-  product: string;
+  title: string;
 }
 
 let result = fetch<Product>("url");
-result.data?.product;
+result.data?.title;
+
+class PersonB {
+  constructor(public name: string) {}
+}
+
+class CustomerB extends PersonB {}
+
+function echo<T extends PersonB>(value: T): T {
+  return value;
+}
+
+echo(new CustomerB("a"));
