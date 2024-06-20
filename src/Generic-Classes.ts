@@ -11,3 +11,26 @@ class ArrayUtils {
 }
 
 let number = ArrayUtils.wrapInArray(1);
+
+// http://mywebsite.com/users
+// http://mywebsite.com/prosducts
+
+interface Result<T> {
+  data: T | null;
+  error: string | null;
+}
+
+function fetch<T>(url: string): Result<T> {
+  return { data: null, error: null };
+}
+
+interface User {
+  username: string;
+}
+
+interface Product {
+  product: string;
+}
+
+let result = fetch<Product>("url");
+result.data?.product;
