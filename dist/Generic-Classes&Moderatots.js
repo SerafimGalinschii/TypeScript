@@ -40,16 +40,24 @@ function echo(value) {
     return value;
 }
 echo(new CustomerB("a"));
-function Commponent(constructor) {
-    console.log("Component decorator called");
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.insertInDOM = () => {
-        console.log("Inserting the component in the DOM");
+function Component(options) {
+    return (constructor) => {
+        console.log("Component decorator called");
+        constructor.prototype.options = options;
+        constructor.prototype.uniqueId = Date.now();
+        constructor.prototype.insertInDOM = () => {
+            console.log("Inserting the component in the DOM");
+        };
     };
 }
-let ProfileComponent = class ProfileComponent {
+function Pipe(constructor) {
+    console.log("Pipe decorator called");
+    constructor.prototype.pipe = true;
+}
+let ProfileComponentt = class ProfileComponentt {
 };
-ProfileComponent = __decorate([
-    Commponent
-], ProfileComponent);
+ProfileComponentt = __decorate([
+    Component({ selector: "#my-profile" }),
+    Pipe
+], ProfileComponentt);
 //# sourceMappingURL=Generic-Classes&Moderatots.js.map
