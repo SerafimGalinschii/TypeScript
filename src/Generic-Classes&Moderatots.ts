@@ -20,20 +20,20 @@ interface Result<T> {
   error: string | null;
 }
 
-function fetch<T>(url: string): Result<T> {
-  return { data: null, error: null };
-}
+// function fetch<T>(url: string): Result<T> {
+//   return { data: null, error: null };
+// }
 
-interface User {
-  username: string;
-}
+// interface User {
+//   username: string;
+// }
 
-interface Product {
-  title: string;
-}
+// interface Product {
+//   title: string;
+// }
 
-let result = fetch<Product>("url");
-result.data?.title;
+// let result = fetch<Product>("url");
+// result.data?.title;
 
 class PersonB {
   constructor(public name: string) {}
@@ -46,3 +46,14 @@ function echo<T extends PersonB>(value: T): T {
 }
 
 echo(new CustomerB("a"));
+
+function Commponent(constructor: Function) {
+  console.log("Component decorator called");
+  constructor.prototype.uniqueId = Date.now();
+  constructor.prototype.insertInDOM = () => {
+    console.log("Inserting the component in the DOM");
+  };
+}
+
+@Commponent
+class ProfileComponent {}
