@@ -79,6 +79,8 @@ let irde = {
 };
 
 // Type Assertions
-let phone = document.getElementById("phone") as HTMLInputElement;
+let phone = (<HTMLInputElement>(
+  document.getElementById("phone")
+)) as HTMLInputElement;
 
 phone.value;
